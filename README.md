@@ -8,13 +8,14 @@ Fun short project to test the Spotify API
 Add your Spotify credentials (cf. [https://developer.spotify.com/dashboard/login](https://developer.spotify.com/dashboard/login)): 
 - Client ID
 - Client Secret
+
 in the following file:
 - ./spotify_express/.env
 
-Then, open 2 terminals and copy these 2 cmd in command line.
+Then, open 2 terminals and copy in command line the cmd.
 
-Launch Front-end 
+Launch Front-end with:
 ```npm run front```
 
-Launch Back-end 
+Launch Back-end with:
 ```npm run back```
