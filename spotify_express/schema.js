@@ -33,6 +33,7 @@ const schema = buildSchema(`
         id: String!
         name: String
         release_date: String
+        uri: String
         picture: String
     }
 `);

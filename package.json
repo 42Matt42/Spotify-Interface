@@ -18,5 +18,6 @@
     "url": "https://github.com/42Matt42/Spotify_Interface/issues"
   },
   "homepage": "https://github.com/42Matt42/Spotify_Interface#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {}
 }
