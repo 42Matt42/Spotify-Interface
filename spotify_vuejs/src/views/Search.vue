@@ -24,15 +24,21 @@
               readonly
             />
           </v-row>
-          <v-row justify="space-around">
-            <v-col cols="6">
-              <v-img 
-                :src="`${artist.picture}`"
-                contain
-              />
-            </v-col>
-          </v-row>
         </router-link>
+          <v-row justify="center" align="center">
+            <v-col cols="5" class="hidden-xs-only">
+              <router-link
+                :to="{ name: 'Albums', params: { artistId: artist.id, artistName: artist.name } }"
+                tag="span"
+              >
+                <v-img 
+                  :src="`${artist.picture}`"
+                  contain
+                />
+              </router-link>
+            </v-col>
+            <player spotifyCategory="artist" :uri="`${artist.uri}`" />
+          </v-row>
         <br><br>
       </div>
     </div>
@@ -40,7 +46,12 @@
 </template>
 
 <script>
+import player from '../components/play-button-spotify.vue'
+
 export default {
+  components: {
+    player
+  },
   props: {
     research: {
       type: String,
@@ -60,6 +71,7 @@ export default {
           name
           popularity
           picture
+          uri
           followers {
             total
           }
