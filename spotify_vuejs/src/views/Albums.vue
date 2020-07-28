@@ -10,13 +10,14 @@
       >
         <v-row justify="center"><span class="text-h5 font-italic font-weight-medium">{{ album.name }}</span></v-row>
         <v-row justify="center"><span class="text-subtitle-1 font-italic font-weight-light">({{ album.release_date }})</span></v-row>
-        <v-row justify="center">
-          <v-col cols="5">
+        <v-row justify="center" align="center">
+          <v-col cols="5" class="hidden-xs-only">
             <v-img 
               :src="`${album.picture}`" 
               contain
             />
           </v-col>
+          <player spotifyCategory="album" :uri="`${album.uri}`" />
         </v-row>
         <br><br>
       </div>
@@ -25,7 +26,12 @@
 </template>
 
 <script>
+import player from '../components/play-button-spotify.vue'
+
 export default {
+  components: {
+    player
+  },
   props: {
     artistId: {
       type: String,
@@ -48,6 +54,7 @@ export default {
           id
           name
           release_date
+          uri
           picture
         }
       }
